@@ -68,11 +68,11 @@ class SearchViewController: UIViewController {
   
   func performSearchWithOptions(_ searchOptions: SearchOptions) {
     self.searchOptions = searchOptions
-    
+    let searchnumber = Int(searchOptions.iteration!)
     if let replacementString = searchOptions.replacementString {
       searchForText(searchOptions.searchString, replaceWith: replacementString, inTextView: textView)
     } else {
-      highlightText(searchOptions.searchString, inTextView: textView)
+      highlightText(searchOptions.searchString, inTextView: textView, iteration: searchnumber)
     }
   }
   
@@ -92,7 +92,7 @@ class SearchViewController: UIViewController {
     }
   }
   
-  func highlightText(_ searchText: String, inTextView textView: UITextView) {
+    func highlightText(_ searchText: String, inTextView textView: UITextView, iteration: Int?) {
     let attributedText = textView.attributedText.mutableCopy() as! NSMutableAttributedString
     let attributedTextRange = NSMakeRange(0, attributedText.length)
     attributedText.removeAttribute(NSAttributedString.Key.backgroundColor, range: attributedTextRange)
@@ -106,7 +106,20 @@ class SearchViewController: UIViewController {
         }
       }
     }
-
+        //Searches for the nth iteration of a substring. Once found it highlights it in a light green color
+        //If the substring isn't found it simply shows all of the highlights
+        if(iteration != nil)
+        {
+            if let searchOptions = self.searchOptions, let regex = try? NSRegularExpression(options: searchOptions) {
+                let range = NSRange(textView.text.startIndex..., in: textView.text)
+                let matches = regex!.matches(in: textView.text, options: [], range: range)
+                if((iteration! - 1 < matches.count) && (iteration! > 0))
+                {
+                    let matchRange = matches[iteration! - 1].range
+                    attributedText.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor(hue: 0.2944, saturation: 1, brightness: 1, alpha: 1.0), range: matchRange)
+                }
+            }
+        }
     textView.attributedText = (attributedText.copy() as! NSAttributedString)
   }
   
@@ -175,6 +188,7 @@ class SearchViewController: UIViewController {
   
   func highlightMatches(_ matches: [NSTextCheckingResult]) {
     let attributedText = textView.attributedText.mutableCopy() as! NSMutableAttributedString
+    
     for match in matches {
       let matchRange = match.range
       attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.blue, range: matchRange)

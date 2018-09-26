@@ -33,7 +33,8 @@ struct SearchOptions {
   var replacementString: String?
   let matchCase: Bool
   let wholeWords: Bool
-    //let firstFind: Bool
+    let iteration: String?
+    
 }
 
 class SearchOptionsViewController: UITableViewController {
@@ -45,6 +46,7 @@ class SearchOptionsViewController: UITableViewController {
   @IBOutlet weak var replaceTextSwitch: UISwitch!
   @IBOutlet weak var matchCaseSwitch: UISwitch!
   @IBOutlet weak var wholeWordsSwitch: UISwitch!
+    @IBOutlet weak var iterationTextField: UITextField!
     
     @IBOutlet weak var FindIteration: UILabel!
     @IBAction func iterationamount(_ sender: Any) {
@@ -62,6 +64,7 @@ class SearchOptionsViewController: UITableViewController {
     if let options = searchOptions {
       searchTextField.text = options.searchString
       replacementTextField.text = options.replacementString
+        iterationTextField.text = options.iteration
       replaceTextSwitch.isOn = options.replacementString != nil
       matchCaseSwitch.isOn = options.matchCase
       wholeWordsSwitch.isOn = options.wholeWords
@@ -80,9 +83,7 @@ class SearchOptionsViewController: UITableViewController {
     searchOptions = SearchOptions(searchString: searchTextField.text!,
                                   replacementString: replaceTextSwitch.isOn ? replacementTextField.text : nil,
                                   matchCase: matchCaseSwitch.isOn,
-                                  wholeWords: wholeWordsSwitch.isOn
-                                  //,firstFind: firstFind.isON
-    )
+                                  wholeWords: wholeWordsSwitch.isOn, iteration: iterationTextField.text)
     
     performSegue(withIdentifier: Storyboard.Identifiers.unwindSegueIdentifier, sender: self)
   }

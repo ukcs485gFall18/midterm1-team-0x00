@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iRegex/SearchOptionsViewController.swift"
+            timestampString = "559673329.492992"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iRegex/SearchViewController.swift"
+            timestampString = "559672832.832359"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "highlightText(_:inTextView:iteration:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iRegex/SearchOptionsViewController.swift"
+            timestampString = "559673329.493856"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "searchTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iRegex/SearchOptionsViewController.swift"
+            timestampString = "559673329.494699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "SearchOptionsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iRegex.SearchOptionsViewController.iterationTextField.getter : weak Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "iRegex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Josh/Downloads/iRegex/iRegex_FinalProject/iRegex/SearchOptionsViewController.swift"
+                  timestampString = "559672984.293287"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iRegex.SearchOptionsViewController.iterationTextField.setter : weak Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "iRegex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Josh/Downloads/iRegex/iRegex_FinalProject/iRegex/SearchOptionsViewController.swift"
+                  timestampString = "559672984.295338"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iRegex.SearchOptionsViewController.init(style: __C.UITableViewStyle) -&gt; iRegex.SearchOptionsViewController"
+                  moduleName = "iRegex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Josh/Downloads/iRegex/iRegex_FinalProject/iRegex/SearchOptionsViewController.swift"
+                  timestampString = "559672984.297465"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "786">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iRegex.SearchOptionsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; iRegex.SearchOptionsViewController"
+                  moduleName = "iRegex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Josh/Downloads/iRegex/iRegex_FinalProject/iRegex/SearchOptionsViewController.swift"
+                  timestampString = "559672984.299781"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "733">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iRegex.SearchOptionsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;iRegex.SearchOptionsViewController&gt;"
+                  moduleName = "iRegex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Josh/Downloads/iRegex/iRegex_FinalProject/iRegex/SearchOptionsViewController.swift"
+                  timestampString = "559672984.301739"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "697">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iRegex/SearchOptionsViewController.swift"
+            timestampString = "559673329.49551"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "SearchOptions"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

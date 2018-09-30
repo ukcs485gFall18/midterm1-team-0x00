@@ -42,6 +42,7 @@ extension NSRegularExpression {
     try self.init(pattern: pattern, options: regexOption)
   }
   
+  // *** Added in Tutorial *** //
   static var regularExpressionForDates: NSRegularExpression? {
     let pattern = "(\\d{1,2}[-/.]\\d{1,2}[-/.]\\d{1,2})|(Jan(uary)?|Feb(ruary)?|Mar(ch)?|Apr(il)?|May|Jun(e)?|Jul(y)?|Aug(ust)?|Sep(tember)?|Oct(ober)?|Nov(ember)?|Dec(ember)?)\\s*(\\d{1,2}(st|nd|rd|th)?+)?[,]\\s*\\d{4}"
     return try? NSRegularExpression(pattern: pattern, options: .caseInsensitive)
@@ -56,6 +57,7 @@ extension NSRegularExpression {
     let pattern = "~{10,}"
     return try? NSRegularExpression(pattern: pattern, options: [])
   }
+  // ***                   *** //
 
 }
 

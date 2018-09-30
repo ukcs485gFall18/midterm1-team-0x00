@@ -14,8 +14,9 @@
 		1703DFA619E995F10019822A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1703DFA419E995F10019822A /* LaunchScreen.xib */; };
 		174C767119EAE0F20052D4F8 /* SearchOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C767019EAE0F20052D4F8 /* SearchOptionsViewController.swift */; };
 		17B9B3D519EBFFCB003FB62B /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B9B3D419EBFFCB003FB62B /* AccountViewController.swift */; };
-		45A0AAF620CDA05600EE6D77 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0AAF520CDA05600EE6D77 /* AccountManager.swift */; };
-		45A0AAF820CDA0B200EE6D77 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0AAF720CDA0B200EE6D77 /* LoginViewController.swift */; };
+		17B9B3D919ED4FD8003FB62B /* RegexHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B9B3D819ED4FD8003FB62B /* RegexHelpers.swift */; };
+		45A0AAF220CD7B4100EE6D77 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0AAF120CD7B4100EE6D77 /* AccountManager.swift */; };
+		45A0AAF420CD7EA900EE6D77 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0AAF320CD7EA900EE6D77 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +29,10 @@
 		1703DFA519E995F10019822A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		174C767019EAE0F20052D4F8 /* SearchOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchOptionsViewController.swift; sourceTree = "<group>"; };
 		17B9B3D419EBFFCB003FB62B /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		186BCBCF213C695000723569 /* iRegex.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = iRegex.playground; sourceTree = "<group>"; };
-		45A0AAF520CDA05600EE6D77 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
-		45A0AAF720CDA0B200EE6D77 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		17B9B3D819ED4FD8003FB62B /* RegexHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexHelpers.swift; sourceTree = "<group>"; };
+		186BCBCE2138757400723569 /* iRegex.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = iRegex.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		45A0AAF120CD7B4100EE6D77 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		45A0AAF320CD7EA900EE6D77 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,13 +65,14 @@
 		1703DF9619E995F10019822A /* iRegex */ = {
 			isa = PBXGroup;
 			children = (
-				186BCBCF213C695000723569 /* iRegex.playground */,
-				45A0AAF520CDA05600EE6D77 /* AccountManager.swift */,
+				186BCBCE2138757400723569 /* iRegex.playground */,
+				45A0AAF120CD7B4100EE6D77 /* AccountManager.swift */,
 				17B9B3D419EBFFCB003FB62B /* AccountViewController.swift */,
 				1703DF9919E995F10019822A /* AppDelegate.swift */,
-				45A0AAF720CDA0B200EE6D77 /* LoginViewController.swift */,
-				1703DF9B19E995F10019822A /* SearchViewController.swift */,
+				45A0AAF320CD7EA900EE6D77 /* LoginViewController.swift */,
+				17B9B3D819ED4FD8003FB62B /* RegexHelpers.swift */,
 				174C767019EAE0F20052D4F8 /* SearchOptionsViewController.swift */,
+				1703DF9B19E995F10019822A /* SearchViewController.swift */,
 				1703DF9F19E995F10019822A /* Main.storyboard */,
 				1703DFA419E995F10019822A /* LaunchScreen.xib */,
 				1703DFA219E995F10019822A /* Images.xcassets */,
@@ -157,12 +160,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45A0AAF820CDA0B200EE6D77 /* LoginViewController.swift in Sources */,
-				45A0AAF620CDA05600EE6D77 /* AccountManager.swift in Sources */,
 				1703DF9A19E995F10019822A /* AppDelegate.swift in Sources */,
+				45A0AAF220CD7B4100EE6D77 /* AccountManager.swift in Sources */,
 				1703DF9C19E995F10019822A /* SearchViewController.swift in Sources */,
 				17B9B3D519EBFFCB003FB62B /* AccountViewController.swift in Sources */,
+				45A0AAF420CD7EA900EE6D77 /* LoginViewController.swift in Sources */,
 				174C767119EAE0F20052D4F8 /* SearchOptionsViewController.swift in Sources */,
+				17B9B3D919ED4FD8003FB62B /* RegexHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +243,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -284,7 +289,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -36,6 +36,11 @@ class AccountViewController: UITableViewController {
   @IBOutlet weak var superVillianNameField: UITextField!
   @IBOutlet weak var passwordField: UITextField!
   
+  //Added for additional Functionality
+  @IBOutlet weak var expressionField: UITextField!
+  @IBOutlet weak var expressionResult: UILabel!
+  
+    
   struct Storyboard {
     struct Identifiers {
       static let unwindSegueIdentifier = "UnwindSegue"
@@ -45,9 +50,11 @@ class AccountViewController: UITableViewController {
   lazy var textFields: [UITextField] = []
   var regexes: [NSRegularExpression?]!
   
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    // *** Added in Tutorial *** //
     textFields = [ firstNameField, middleInitialField, lastNameField, superVillianNameField, passwordField ]
 
     let patterns = [ "^[a-z]{1,10}$",
@@ -68,7 +75,13 @@ class AccountViewController: UITableViewController {
         #endif
       }
     }
-  }
+    // ***                   *** //
+    
+    //Added by Cody Leslie
+    //Initialize anything needed for the expression checking
+    expressionResult.text = "Please enter a simple math expression"
+    //End of addition
+}
   
   override func viewWillAppear(_ animated: Bool) {
     firstNameField.text = AccountManager.getFirstName()
@@ -79,7 +92,56 @@ class AccountViewController: UITableViewController {
     
     super.viewWillAppear(animated)
   }
-  
+    
+    //Added by Cody Leslie
+    // If the button has been pressed, test the expression.
+    // In further research, I discovered that it is impossible to model parenthetical operations with regular expressions.
+    // As such, this only tests the basic operators +, -, *, /, and ^.
+    // However, to add more complexity to compensate for this, it now accepts decimal values and sin() expressions.
+    func validExpression(exp: String) -> Bool
+    {
+        let expressionPattern = "^(\\d+\\d*\\.?\\d*)|(sin\\(\\d+\\d*\\.?\\d*\\))([\\+-\\/\\*\\^]((\\d+\\d*\\.?\\d*)|sin\\(\\d+\\d*\\.?\\d*\\)))*$"
+        let expressionRegEx = try! NSRegularExpression(pattern: expressionPattern)
+        return validateWhole(test: exp, RegEx: expressionRegEx)
+    }
+    
+    //Make sure the whole string matches
+    func validateWhole(test: String, RegEx regex:NSRegularExpression) -> Bool
+    {
+        let range = NSRange(test.startIndex..., in: test)
+        let matches = regex.matches(in: test, options: .reportProgress, range: range)
+        for match in matches{
+            let matchRange = match.range
+            if matchRange.location != NSNotFound
+            {
+                if matchRange.upperBound == test.count
+                {
+                    return true
+                }
+            }
+            
+        }
+        return false
+    }
+    
+    //Modify label based on the result
+    @IBAction func expTest(_ sender: Any) {
+        let result:Bool
+        if let input = expressionField.text
+        {
+            result = validExpression(exp: input)
+        } else {
+            //Set to false if no input
+            result = true
+        }
+        if result {
+            expressionResult.text = "Valid"
+        } else {
+            expressionResult.text = "Invalid"
+        }
+    }
+    //End of addition
+    
   @IBAction func saveTapped(_ sender: AnyObject) {
     if allTextFieldsAreValid() {
       AccountManager.setAccountWith(firstName: firstNameField.text,
@@ -98,21 +160,31 @@ class AccountViewController: UITableViewController {
   }
   
   func validate(string: String, withRegex regex: NSRegularExpression) -> Bool {
+    
+    // *** Added in Tutorial *** //
     let range = NSRange(string.startIndex..., in: string)
     let matchRange = regex.rangeOfFirstMatch(in: string, options: .reportProgress, range: range)
     return matchRange.location != NSNotFound
-  }
+    // ***                   *** //
+    
+    }
   
   func validateTextField(_ textField: UITextField) {
+    
+    // *** Added in Tutorial *** //
     let index = textFields.index(of: textField)
-    if let regex = regexes[index!] {
-      if let text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
-  
-        let valid = validate(string: text, withRegex: regex)
-        
-        textField.textColor = valid ? .trueColor : .falseColor
-      }
+    if index != nil {
+        if let regex = regexes[index!] {
+          if let text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
+      
+            let valid = validate(string: text, withRegex: regex)
+            
+            textField.textColor = valid ? .trueColor : .falseColor
+          }
+        }
     }
+    // ***                   *** //
+    
   }
   
   func allTextFieldsAreValid() -> Bool {

@@ -610,6 +610,44 @@ More to follow soon.
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nX1-Qb-PvD">
+                                        <rect key="frame" x="0.0" y="275.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nX1-Qb-PvD" id="bwF-zH-Kc6">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Simple Math Expression" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GI5-KT-bNB">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GI5-KT-bNB" firstAttribute="top" secondItem="bwF-zH-Kc6" secondAttribute="top" id="3gd-rl-GMo"/>
+                                                <constraint firstItem="GI5-KT-bNB" firstAttribute="leading" secondItem="bwF-zH-Kc6" secondAttribute="leadingMargin" id="jgx-0X-4O5"/>
+                                                <constraint firstItem="GI5-KT-bNB" firstAttribute="trailing" secondItem="bwF-zH-Kc6" secondAttribute="trailingMargin" id="w5e-SV-X2z"/>
+                                                <constraint firstAttribute="bottom" secondItem="GI5-KT-bNB" secondAttribute="bottom" id="w78-Xn-QQQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8wo-0w-Yg3">
+                                        <rect key="frame" x="0.0" y="319.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8wo-0w-Yg3" id="0ya-wq-tFn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expression Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSE-U8-MKa">
+                                                    <rect key="frame" x="16" y="11" width="343" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -624,13 +662,22 @@ More to follow soon.
                                 <segue destination="N1w-Tq-LRO" kind="unwind" identifier="UnwindSegue" unwindAction="unwindToTextHighlightViewController:" id="nmf-9o-h60"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="CpL-tV-6Uj">
-                            <connections>
-                                <action selector="saveTapped:" destination="xNw-ee-LXc" id="a6j-Cw-LEh"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="save" id="CpL-tV-6Uj">
+                                <connections>
+                                    <action selector="saveTapped:" destination="xNw-ee-LXc" id="a6j-Cw-LEh"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Test" id="0Pu-KZ-az6">
+                                <connections>
+                                    <action selector="expTest:" destination="xNw-ee-LXc" id="mp8-jY-f6W"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="expressionField" destination="GI5-KT-bNB" id="MUJ-OC-52g"/>
+                        <outlet property="expressionResult" destination="vSE-U8-MKa" id="EOY-Wx-rYQ"/>
                         <outlet property="firstNameField" destination="X1S-LW-BTs" id="Cen-z0-h10"/>
                         <outlet property="lastNameField" destination="JKI-RP-RxK" id="0HV-Re-ahj"/>
                         <outlet property="middleInitialField" destination="iU6-7H-KH4" id="Pv7-ge-rK8"/>
@@ -662,7 +709,7 @@ More to follow soon.
                     </tableViewCellContentView>
                 </tableViewCell>
             </objects>
-            <point key="canvasLocation" x="3102" y="469"/>
+            <point key="canvasLocation" x="3101.5999999999999" y="468.21589205397305"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="9ef-75-4QE">

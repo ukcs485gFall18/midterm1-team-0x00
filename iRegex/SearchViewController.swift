@@ -77,6 +77,8 @@ class SearchViewController: UIViewController {
   }
   
   func searchForText(_ searchText: String, replaceWith replacementText: String, inTextView textView: UITextView) {
+    
+    // *** Added in Tutorial *** //
     if let beforeText = textView.text, let searchOptions = self.searchOptions {
       let range = NSRange(beforeText.startIndex..., in: beforeText)
       
@@ -90,22 +92,26 @@ class SearchViewController: UIViewController {
         textView.text = afterText
       }
     }
-  }
+    // ***                   *** //
+}
   
     func highlightText(_ searchText: String, inTextView textView: UITextView, iteration: Int?) {
-    let attributedText = textView.attributedText.mutableCopy() as! NSMutableAttributedString
-    let attributedTextRange = NSMakeRange(0, attributedText.length)
+        
+        // *** Added in Tutorial *** //
+        let attributedText = textView.attributedText.mutableCopy() as! NSMutableAttributedString
+        let attributedTextRange = NSMakeRange(0, attributedText.length)
     attributedText.removeAttribute(NSAttributedString.Key.backgroundColor, range: attributedTextRange)
 
-    if let searchOptions = self.searchOptions, let regex = try? NSRegularExpression(options: searchOptions) {
-      let range = NSRange(textView.text.startIndex..., in: textView.text)
-      if let matches = regex?.matches(in: textView.text, options: [], range: range) {
-        for match in matches {
-          let matchRange = match.range
-          attributedText.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor.yellow, range: matchRange)
+        if let searchOptions = self.searchOptions, let regex = try? NSRegularExpression(options: searchOptions) {
+            let range = NSRange(textView.text.startIndex..., in: textView.text)
+            if let matches = regex?.matches(in: textView.text, options: [], range: range) {
+                for match in matches {
+                    let matchRange = match.range
+                    attributedText.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor.yellow, range: matchRange)
+                }
+            }
         }
-      }
-    }
+        //Implemented by Joshua Fishman
         //Searches for the nth iteration of a substring. Once found it highlights it in a light green color
         //If the substring isn't found it simply shows all of the highlights
         if(iteration != nil)
@@ -121,7 +127,9 @@ class SearchViewController: UIViewController {
             }
         }
     textView.attributedText = (attributedText.copy() as! NSAttributedString)
-  }
+    // ***                   *** //
+        
+}
   
   func rangeForAllTextInTextView() -> NSRange {
     return NSRange(textView.text.startIndex..., in: textView.text)
@@ -143,6 +151,7 @@ class SearchViewController: UIViewController {
     }
   }
   
+  // *** Added in Tutorial *** //
   func decorateAllDatesWith(_ decoration: Decoration) {
     if let regex = NSRegularExpression.regularExpressionForDates {
       let matches = matchesForRegularExpression(regex, inTextView: textView)
@@ -178,6 +187,7 @@ class SearchViewController: UIViewController {
       }
     }
   }
+  // ***                   *** //
   
   func matchesForRegularExpression(_ regex: NSRegularExpression, inTextView textView: UITextView) -> [NSTextCheckingResult] {
     let string = textView.text
